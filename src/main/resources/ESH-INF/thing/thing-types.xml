@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="daikinaltherma"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Sample Thing Type -->
+	<thing-type id="adapter">
+		<label>DaikinAltherma Adapter</label>
+		<description>This adapter is attached to the heating/cooling unit</description>
+
+		<config-description>
+			<parameter name="host" type="text" required="false">
+				<label>Host name</label>
+				<description>Host name or IP address of the adapter. If non is specified Altherma.home is used.</description>
+			</parameter>
+			<parameter name="port" type="integer" required="false">
+				<label>Port</label>
+				<description>Port to connect to for the adapter. Usually 80</description>
+			</parameter>
+			<parameter name="interval" type="integer" required="false">
+				<label>Polling interval</label>
+				<description>The time in seconds between updates.</description>
+			</parameter>
+		</config-description>
+
+	</thing-type>
+
+	<!-- Sample Channel Type -->
+	<channel-type id="sample-channel">
+		<item-type>daikinalthermaItem</item-type>
+		<label>DaikinAltherma Binding Channel</label>
+		<description>Sample channel for DaikinAltherma Binding</description>
+	</channel-type>
+	
+	<channel-group-type id="top-level-group">
+		<label>Top Level Group</label>
+		<description>Each Adapter has multiple sub items. These are contained in this group</description>
+	</channel-group-type>
+</thing:thing-descriptions>
